@@ -18,6 +18,7 @@ const ModalBtn = styled.button`
   font-size: 10px;
   background-color: #4700ce;
   color: white;
+  cursor: pointer;
 `;
 
 const ModalBackground = styled.div`
@@ -46,6 +47,7 @@ const ModalBox = styled.div`
     width: 20px;
     height: 20px;
     font-weight: 700;
+    cursor: pointer;
   }
   > .quote {
     position: absolute;
