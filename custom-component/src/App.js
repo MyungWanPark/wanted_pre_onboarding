@@ -1,7 +1,9 @@
 import "./App.css";
+import Memo from "./component/memo";
+import Toggle from "./component/toggle";
 
 function App() {
-  return <h1>hello :) </h1>;
+  return <Toggle />;
 }
 
 export default App;
