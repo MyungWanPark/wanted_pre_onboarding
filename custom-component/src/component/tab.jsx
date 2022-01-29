@@ -10,6 +10,7 @@ const Tabs = styled.ul`
   display: flex;
   list-style: none;
   width: 100%;
+  cursor: pointer;
 
   > .listItem {
     width: 30%;
