@@ -30,6 +30,7 @@ const TagBox = styled.div`
       display: flex;
       align-items: center;
       border-radius: 10px;
+      cursor: pointer;
 
       > .tagContent {
         display: inline-block;
