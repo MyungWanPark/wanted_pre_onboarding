@@ -16,17 +16,21 @@ const InputContainer = styled.div`
   margin-bottom: 20px;
   display: flex;
   align-items: center;
+
   > .nameSpan,
   .ageSpan,
   input,
   input:focus {
     display: inline-block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin: 0px 10px;
     text-align: center;
     width: 70%;
     height: 90%;
-    line-height: 35px;
     border: 1px solid lightgray;
+    font-size: 15px;
   }
   > input:focus {
     font-size: 15px;
@@ -40,9 +44,9 @@ const InputContainer = styled.div`
   }
 `;
 const Result = styled.div`
-  width: 25%;
+  width: 40%;
   margin-top: 30px;
-  margin-left: 40px;
+  margin-left: 20%;
 `;
 
 const ClickToEdit = () => {
