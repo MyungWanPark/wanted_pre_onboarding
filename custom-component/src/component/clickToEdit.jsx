@@ -2,9 +2,43 @@ import React, { useEffect } from "react";
 import { useRef, useState } from "react/cjs/react.development";
 import styled from "styled-components";
 
-const TotalContainer = styled.div``;
-const InputContainer = styled.div``;
-const Result = styled.div``;
+const TotalContainer = styled.div`
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
+const InputContainer = styled.div`
+  width: 25%;
+  height: 7%;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  > .nameSpan,
+  .ageSpan,
+  input,
+  input:focus {
+    display: inline-block;
+    margin: 0px 10px;
+    text-align: center;
+    width: 70%;
+    height: 90%;
+    line-height: 35px;
+    border: 1px solid lightgray;
+  }
+  > input:focus {
+    font-size: 15px;
+    outline: none;
+    border: 2px solid #59728e;
+  }
+`;
+const Result = styled.div`
+  width: 25%;
+  margin-top: 30px;
+  margin-left: 40px;
+`;
 
 const ClickToEdit = () => {
   const [name, setName] = useState("홍길동");
@@ -51,7 +85,9 @@ const ClickToEdit = () => {
             onChange={(event) => setTempName(event.target.value)}
           />
         ) : (
-          <span onClick={() => setIsNameEditable(true)}>{name}</span>
+          <span className="nameSpan" onClick={() => setIsNameEditable(true)}>
+            {name}
+          </span>
         )}
       </InputContainer>
       <InputContainer>
@@ -65,11 +101,13 @@ const ClickToEdit = () => {
             onChange={(event) => setTempAge(event.target.value)}
           />
         ) : (
-          <span onClick={() => setIsAgeEditable(true)}>{age}</span>
+          <span className="ageSpan" onClick={() => setIsAgeEditable(true)}>
+            {age}
+          </span>
         )}
       </InputContainer>
       <Result>
-        이름: {name} 나이: {age}
+        이름 {name} 나이 {age}
       </Result>
     </TotalContainer>
   );
