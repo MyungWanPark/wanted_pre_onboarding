@@ -15,16 +15,17 @@ const Container = styled.div`
     background: linear-gradient(to right, RGB(76, 17, 209) 50%, #c5c5c5 50%)
       right;
     background-size: 200%;
-    transition: 300ms;
+    transition: 500ms;
     width: 60px;
     height: 30px;
     border-radius: 15px;
+    cursor: pointer;
 
     &.color-on {
       background: linear-gradient(to right, RGB(76, 17, 209) 50%, #c5c5c5 50%)
         left;
       background-size: 200%;
-      transition: 300ms;
+      transition: 500ms;
     }
 
     > .toggle-btn {

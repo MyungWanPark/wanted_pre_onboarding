@@ -5,8 +5,15 @@ const TotalContainer = styled.div`
   width: 100vw;
   height: 100vh;
   display: flex;
-  position: absolute;
-  top: 40%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`;
+
+const Wrapper = styled.div`
+  width: 100vw;
+  height: 40vh;
+  display: flex;
   flex-direction: column;
   align-items: center;
 `;
@@ -16,7 +23,7 @@ const InputContainer = styled.div`
   display: flex;
   justify-content: center;
   width: 100%;
-  height: 10%;
+  height: 20%;
 
   > .input {
     padding: 10px;
@@ -131,38 +138,40 @@ const Autocomplete = () => {
 
   return (
     <TotalContainer>
-      <InputContainer>
-        <input
-          type="text"
-          value={inputValue}
-          onChange={handleInputChange}
-          onKeyUp={handleKeyUp}
-          placeholder="type any words"
-          className={
-            isInputted
-              ? options.length !== 0
-                ? `input isInputted properInput`
-                : `input isInputted unProperInput`
-              : "input"
-          }
-        />
-        <DeleteBtn onClick={() => setInputValue("")}>&times;</DeleteBtn>
-      </InputContainer>
-      {options.length !== 0 ? (
-        <DropBox>
-          {options.map((option, index) => {
-            return (
-              <li
-                key={index}
-                onClick={() => selectDropDown(option)}
-                className={selectedIndex === index ? "selected" : ""}
-              >
-                {option}
-              </li>
-            );
-          })}
-        </DropBox>
-      ) : null}
+      <Wrapper>
+        <InputContainer>
+          <input
+            type="text"
+            value={inputValue}
+            onChange={handleInputChange}
+            onKeyUp={handleKeyUp}
+            placeholder="type any words"
+            className={
+              isInputted
+                ? options.length !== 0
+                  ? `input isInputted properInput`
+                  : `input isInputted unProperInput`
+                : "input"
+            }
+          />
+          <DeleteBtn onClick={() => setInputValue("")}>&times;</DeleteBtn>
+        </InputContainer>
+        {options.length !== 0 ? (
+          <DropBox>
+            {options.map((option, index) => {
+              return (
+                <li
+                  key={index}
+                  onClick={() => selectDropDown(option)}
+                  className={selectedIndex === index ? "selected" : ""}
+                >
+                  {option}
+                </li>
+              );
+            })}
+          </DropBox>
+        ) : null}
+      </Wrapper>
     </TotalContainer>
   );
 };

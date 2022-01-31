@@ -7,7 +7,16 @@ import Tag from "./component/tag";
 import Toggle from "./component/toggle";
 
 function App() {
-  return <ClickToEdit />;
+  return (
+    <>
+      <Toggle />
+      <Modal />
+      <Tab />
+      <Tag />
+      <Autocomplete />
+      <ClickToEdit />
+    </>
+  );
 }
 
 export default App;
