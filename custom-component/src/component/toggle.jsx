@@ -63,7 +63,6 @@ const Toggle = (props) => {
         className={`toggle-container ${isOn ? "color-on" : ""}`}
         onClick={isOnHandler}
       >
-        {/* <div className={`toggle-color ${isOn ? "color-on" : ""}`}></div> */}
         <div className={`toggle-btn ${isOn ? "btn-on" : ""}`}></div>
       </div>
       <div className="notification">Toggle Switch {isOn ? "ON" : "OFF"}</div>
