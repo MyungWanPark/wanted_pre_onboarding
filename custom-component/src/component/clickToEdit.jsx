@@ -36,6 +36,26 @@ const ClickToEdit = () => {
     setTempAge(event.target.value);
   };
 
+  const handleNameOnBlur = () => {
+    setIsNameEditable(false);
+    setName(tempName);
+  };
+
+  const handleAgeOnBlur = () => {
+    setIsAgeEditable(false);
+    setAge(tempAge);
+  };
+
+  const handleNameSpanOnClick = () => {
+    setIsNameEditable(true);
+    setIsAgeEditable(false);
+  };
+
+  const handleAgeSpanOnClick = () => {
+    setIsAgeEditable(true);
+    setIsNameEditable(false);
+  };
+
   return (
     <TotalContainer>
       <InputContainer>
@@ -44,22 +64,12 @@ const ClickToEdit = () => {
           <input
             ref={nameInputRef}
             type="text"
-            onBlur={() => {
-              setIsNameEditable(false);
-              setName(tempName);
-            }}
+            onBlur={handleNameOnBlur}
             value={tempName}
             onChange={handleNameChange}
           />
         ) : (
-          <span
-            onClick={() => {
-              setIsNameEditable(true);
-              setIsAgeEditable(false);
-            }}
-          >
-            {name}
-          </span>
+          <span onClick={handleNameSpanOnClick}>{name}</span>
         )}
       </InputContainer>
       <InputContainer>
@@ -68,22 +78,12 @@ const ClickToEdit = () => {
           <input
             ref={ageInputRef}
             type="text"
-            onBlur={() => {
-              setIsAgeEditable(false);
-              setAge(tempAge);
-            }}
+            onBlur={handleAgeOnBlur}
             value={tempAge}
             onChange={handleAgeChange}
           />
         ) : (
-          <span
-            onClick={() => {
-              setIsAgeEditable(true);
-              setIsNameEditable(false);
-            }}
-          >
-            {age}
-          </span>
+          <span onClick={handleAgeSpanOnClick}>{age}</span>
         )}
       </InputContainer>
       <Result>
