@@ -33,6 +33,11 @@ const InputContainer = styled.div`
     outline: none;
     border: 2px solid #59728e;
   }
+
+  > input::selection {
+    background: #c4dbf6;
+    color: black;
+  }
 `;
 const Result = styled.div`
   width: 25%;
