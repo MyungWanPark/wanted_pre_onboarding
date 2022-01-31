@@ -1,13 +1,13 @@
 import "./App.css";
 import Autocomplete from "./component/autoComplete";
-import Memo from "./component/memo";
+import ClickToEdit from "./component/clickToEdit";
 import Modal from "./component/modal";
 import Tab from "./component/tab";
 import Tag from "./component/tag";
 import Toggle from "./component/toggle";
 
 function App() {
-  return <Autocomplete />;
+  return <ClickToEdit />;
 }
 
 export default App;
