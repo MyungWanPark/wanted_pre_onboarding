@@ -85,11 +85,7 @@ useEffect(() => {
 }, [inputValue]);
 ```
 
-8. 드랍다운 메뉴를 키보드 방향키로 선택하기 위해 `selectedIndex` 를 이용한다.
-9. 방향키를 누르기 전에는 드랍다운 메뉴의 리스트를 선택하지 않으므로 `index = -1`로 초기화 한다.
-10. 방향키의 방향에 따라 `selectedIndex`의 값을 변화시켜준 후, `enter` 가 입력되면 해당 `selectedIndex`의 값의 `options`를 선택하여
-    `inputValue`로 설정해준다.
-11. 드랍다운에서 `click` 이 발생하면, 해당 `option`으로 `inputValue`를 설정해준다.
+8. 드랍다운에서 `click` 이 발생하면, 해당 `option`으로 `inputValue`를 설정해준다.
 
 #### 어려웠던 점과 해결 방법
 
