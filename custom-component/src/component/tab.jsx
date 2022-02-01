@@ -35,7 +35,7 @@ const Content = styled.div`
   align-items: center;
 `;
 
-const Tab = (props) => {
+const Tab = () => {
   const [currentTab, setCurrentTab] = useState(0);
 
   const changeTab = (tabIndex) => {

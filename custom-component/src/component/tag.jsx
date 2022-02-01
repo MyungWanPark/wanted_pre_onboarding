@@ -67,7 +67,7 @@ const InputTag = styled.input`
   }
 `;
 
-const Tag = (props) => {
+const Tag = () => {
   const [hashTagArr, setHashTagArr] = useState([
     { id: 1, value: "CodeStates" },
     { id: 2, value: "JJang" },

@@ -50,7 +50,7 @@ const Container = styled.div`
   }
 `;
 
-const Toggle = (props) => {
+const Toggle = () => {
   const [isOn, setisOn] = useState(false);
 
   const isOnHandler = () => {
