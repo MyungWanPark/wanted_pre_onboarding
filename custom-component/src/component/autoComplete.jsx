@@ -79,9 +79,6 @@ const DropBox = styled.ul`
   > li:hover {
     background-color: #efefef;
   }
-  > li.selected {
-    background-color: #efefef;
-  }
 `;
 
 const possibleOptions = [
@@ -96,7 +93,6 @@ const Autocomplete = () => {
   const [inputValue, setInputValue] = useState("");
   const [isInputted, setIsInputted] = useState(false);
   const [options, setOptions] = useState(possibleOptions);
-  const [selectedIndex, setSelectedIndex] = useState(-1);
 
   useEffect(() => {
     if (!inputValue) {
@@ -113,15 +109,6 @@ const Autocomplete = () => {
     }
   }, [inputValue]);
 
-  /*   useEffect(() => {
-    for (let k = 0; k < options.length; k++) {
-      if (options[k] === inputValue) {
-        setOptions("");
-        break;
-      }
-    }
-  }, [inputValue, options]); */
-
   const handleInputChange = (event) => {
     setIsInputted(true);
     setInputValue(event.target.value);
@@ -132,26 +119,6 @@ const Autocomplete = () => {
     setInputValue(selectedOption);
   };
 
-  const handleKeyUp = (event) => {
-    if (event.key === "ArrowDown" && options.length > selectedIndex + 1) {
-      setSelectedIndex(selectedIndex + 1);
-    }
-
-    if (event.key === "ArrowUp" && selectedIndex >= 0) {
-      setSelectedIndex(selectedIndex - 1);
-    }
-
-    if (event.key === "Escape") {
-      setSelectedIndex(-1);
-      setOptions("");
-    }
-
-    if (event.key === "Enter" && selectedIndex >= 0) {
-      selectDropDown(options[selectedIndex]);
-      setSelectedIndex(-1);
-    }
-  };
-
   return (
     <TotalContainer>
       <Wrapper>
@@ -160,7 +127,6 @@ const Autocomplete = () => {
             type="text"
             value={inputValue}
             onChange={handleInputChange}
-            onKeyUp={handleKeyUp}
             placeholder="(AutoComplete) type any words"
             className={
               isInputted
@@ -176,11 +142,7 @@ const Autocomplete = () => {
           <DropBox>
             {options.map((option, index) => {
               return (
-                <li
-                  key={index}
-                  onClick={() => selectDropDown(option)}
-                  className={selectedIndex === index ? "selected" : ""}
-                >
+                <li key={index} onClick={() => selectDropDown(option)}>
                   {option}
                 </li>
               );
