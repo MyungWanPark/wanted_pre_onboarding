@@ -84,6 +84,13 @@ const Tag = (props) => {
     event.preventDefault();
     const inputValue = inputRef.current.value;
 
+    for (let i = 0; i < hashTagArr.length; i++) {
+      if (hashTagArr[i].value === inputValue) {
+        formRef.current.reset();
+        return;
+      }
+    }
+
     if (inputValue) {
       const newArr = [...hashTagArr, { id: Date.now(), value: inputValue }];
       setHashTagArr(newArr);
