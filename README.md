@@ -90,7 +90,6 @@ useEffect(() => {
 #### 어려웠던 점과 해결 방법
 
 - `string`의 `includes`함수가 떠오르지 않아 연관된(단어가 포함된) `options` 배열을 어떻게 보여줘야 하나 당황했다. 검색 후에 `includes` 함수가 있는 것을 발견하여 `filter` 함수를 통해 `includes` 된 단어를 보여주었다.
-- 드랍다운 메뉴 안에서 화살표로 이동하는 법이 떠오르지 않아 막막했다. 여러 시도 뒤 `selectedIndex`라는 변수를 설정하고 방향키에 따라 `selectedIndex`를 변화시켰다. 그리고 그 값에 따라 `css class`를 결정하여 `background-color`를 변화시키는 방법으로 해결하였다.
 - `input` 태그에 `border-radius`를 주니 `input` 태그가 화면에 깨져서 나타나는 버그가 발생했다. 버그를 구글링한 뒤, `input` 태그에 `background-color: transparent;`를 주어 해결하였다.
 - `input` 창에 `space`만 입력하니, `input` 창의 `border-bottom`모습이 처음의 `input`모습과 달라지는 문제가 발생했다. 아래 그림과 같이, `css class`명을 `properInput unProperInput`를 두어 `option`이 하나도 없을 경우는 원래의 `input` 창이 되도록 설정하여 해결하였다.
 
