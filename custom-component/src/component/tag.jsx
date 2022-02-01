@@ -67,10 +67,6 @@ const InputTag = styled.input`
   }
 `;
 
-// 문제점:
-// 123 123 같은 값일때 구분해서 삭제하는게 어려웠다.
-// li 태그 input 안으로 넣기
-
 const Tag = (props) => {
   const [hashTagArr, setHashTagArr] = useState([
     { id: 1, value: "CodeStates" },

@@ -91,6 +91,7 @@ const possibleOptions = [
   "refurbished",
   "중고A급",
 ];
+
 const Autocomplete = () => {
   const [inputValue, setInputValue] = useState("");
   const [isInputted, setIsInputted] = useState(false);
@@ -112,14 +113,23 @@ const Autocomplete = () => {
     }
   }, [inputValue]);
 
+  /*   useEffect(() => {
+    for (let k = 0; k < options.length; k++) {
+      if (options[k] === inputValue) {
+        setOptions("");
+        break;
+      }
+    }
+  }, [inputValue, options]); */
+
   const handleInputChange = (event) => {
     setIsInputted(true);
     setInputValue(event.target.value);
   };
 
-  const selectDropDown = (clickedOption) => {
+  const selectDropDown = (selectedOption) => {
     setIsInputted(true);
-    setInputValue(clickedOption);
+    setInputValue(selectedOption);
   };
 
   const handleKeyUp = (event) => {
@@ -130,6 +140,12 @@ const Autocomplete = () => {
     if (event.key === "ArrowUp" && selectedIndex >= 0) {
       setSelectedIndex(selectedIndex - 1);
     }
+
+    if (event.key === "Escape") {
+      setSelectedIndex(-1);
+      setOptions("");
+    }
+
     if (event.key === "Enter" && selectedIndex >= 0) {
       selectDropDown(options[selectedIndex]);
       setSelectedIndex(-1);
@@ -145,7 +161,7 @@ const Autocomplete = () => {
             value={inputValue}
             onChange={handleInputChange}
             onKeyUp={handleKeyUp}
-            placeholder="type any words"
+            placeholder="(AutoComplete) type any words"
             className={
               isInputted
                 ? options.length !== 0
