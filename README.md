@@ -6,8 +6,9 @@
 
 ## 1️⃣ Toggle
 
+👇시현 영상👇
 <br />
-<img src="https://user-images.githubusercontent.com/56289900/152105470-e343e100-1aba-4a18-af17-83b96a073f09.gif" />
+<img src="https://user-images.githubusercontent.com/56289900/152107545-315e1e66-8c93-4235-a316-ee3be882cdec.gif" />
 <br />
 
 #### 구현한 방법과 이유 🚀
@@ -24,6 +25,11 @@
 
 ## 2️⃣ Modal
 
+👇시현 영상👇
+<br />
+<img src="https://user-images.githubusercontent.com/56289900/152107618-c57062ca-69a7-4752-8723-9f0d4c375c14.gif" />
+<br />
+
 #### 구현한 방법과 이유 🚀
 
 1. `open modal` 버튼의 클릭에 따라 모달창이 보여지는 것을 제어해야 하므로 `isAppeared` state를 활용하여 `boolean` 값을 가지도록 합니다. 즉, `const [isAppeared, setIsAppeared] = useState(false);` 을 이용합니다.
@@ -37,6 +43,11 @@
   <br /><br /><br />
 
 ## 3️⃣ Tab
+
+👇시현 영상👇
+<br />
+<img src="https://user-images.githubusercontent.com/56289900/152107708-45b6d110-c1f1-4cd8-aada-702419644741.gif" />
+<br />
 
 #### 구현한 방법과 이유 🚀
 
@@ -53,6 +64,11 @@
   <br /><br /><br />
 
 ## 4️⃣ Tag
+
+👇시현 영상👇
+<br />
+<img src="https://user-images.githubusercontent.com/56289900/152107757-cd14d35b-7c63-4244-9095-ca21babb49fc.gif" />
+<br />
 
 #### 구현한 방법과 이유 🚀
 
@@ -71,6 +87,11 @@
   <br /><br /><br />
 
 ## 5️⃣ AutoComplete
+
+👇시현 영상👇
+<br />
+<img src="https://user-images.githubusercontent.com/56289900/152107803-5f008fae-26a5-466d-ac49-8e32625fbea0.gif" />
+<br />
 
 #### 구현한 방법과 이유 🚀
 
@@ -104,6 +125,11 @@ useEffect(() => {
   <br /><br /><br />
 
 ## 6️⃣ ClickToEdit
+
+👇시현 영상👇
+<br />
+<img src="https://user-images.githubusercontent.com/56289900/152107850-870ced9c-9388-4323-9b74-773355991d2c.gif" />
+<br />
 
 #### 구현한 방법과 이유 🚀
 
