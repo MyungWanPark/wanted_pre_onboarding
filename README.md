@@ -10,7 +10,7 @@
 
 1. 토글 버튼은 on/off 방식으로 작동 합니다. 따라서 on/off 동작 상태를 `boolean` 값으로 계획하여 `isOn` state 활용하고 이를 `useState` 훅을 사용하여 관리합니다.
 2. 버튼이 on이 되어있는 상태를 표현하기 위해 삼항연산자로 on/off 조건에 따라 `color-on, btn-on`클래스를 추가합니다.
-3. on/off 조건에 맞춰 css로 버튼을 이동시키고, 색상을 변화시킵니다. 이때 어려운 점이 발생하는데 바로 밑에서 설명을 드리겠습니다.
+3. on/off 조건에 맞춰 css로 버튼을 이동시키고, 색상을 변화시킵니다.
    <br />
 
 #### 어려웠던 점과 해결 방법 ❓
@@ -22,10 +22,9 @@
 
 #### 구현한 방법과 이유 🚀
 
-1. 버튼을 누르면 모달창이 생성되고, 모달창이 생성된 후, 여백을 클릭하거나 &times; 를 클릭하면 모달이 닫히는 것을 계획합니다.
-2. `open modal` 버튼의 클릭에 따라 모달창이 보여지는 것을 제어해야 하므로 `isAppeared` state를 활용하여 `boolean` 값을 가지도록 합니다. 즉, `const [isAppeared, setIsAppeared] = useState(false);` 을 이용합니다.
-3. 모달창은 화면 전체를 감싸므로, 모달창 설정을 `position: absolute; width: 100%; height: 100%;` 를 이용해서, 화면 전체를 감쌉니다.
-4. 메세지 창의 여백을 클릭하거나 &times; 를 클릭하면 모달이 닫혀야 하므로, 각각에 `onClick` 이벤트를 주어서 `IsAppeared`를 `handleIsAppeared`를 이용해 제어합니다. 여기서 어려운 점이 나오는데 밑에서 자세히 설명드리겠습니다.
+1. `open modal` 버튼의 클릭에 따라 모달창이 보여지는 것을 제어해야 하므로 `isAppeared` state를 활용하여 `boolean` 값을 가지도록 합니다. 즉, `const [isAppeared, setIsAppeared] = useState(false);` 을 이용합니다.
+2. 모달창은 화면 전체를 감싸므로, 모달창 설정을 `position: absolute; width: 100%; height: 100%;` 를 이용해서, 화면 전체를 감쌉니다.
+3. 메세지 창의 여백을 클릭하거나 &times; 를 클릭하면 모달이 닫혀야 하므로, 각각에 `onClick` 이벤트리스너를 주어서 `IsAppeared`를 `handleIsAppeared`를 이용해 제어합니다.
    <br />
 
 #### 어려웠던 점과 해결 방법 ❓
@@ -54,11 +53,11 @@
 #### 구현한 방법과 이유 🚀
 
 1. 태그가 보여지는 공간(`ul li`태그) 과 새로운 태그를 입력할 수 있는 공간 (`form input`태그) 을 분리합니다.
-2. 모든 태그의 정보를 관리하는 `state`가 필요하므로 `tagsArr` 라는 `state`를 활용하고 `useState`훅을 활용합니다.
+2. 모든 태그의 정보를 관리하는 즉, 태그 배열을 가지고 있는`state`가 필요하므로 `tagsArr` 라는 `state`를 활용하고 `useState`훅을 활용합니다.
 3. 값이 중복되는 태그를 구별해 내기 위해 `tagsArr`는 `id`와 `value` 를 가진 `object` 를 담는 배열로 설정합니다.
 4. 태그가 보여지는 것은 `ul li` 를 활용하고, `tagsArr`의 크기 만큼 보여져야 하기 때문에 배열의 `map` 함수를 이용해서 태그를 만들어 냅니다.
 5. 새로운 태그를 만들 수 있는 공간은 `form input`태그 를 이용했는데, `enter`를 치면 `submit` 이 되는 속성을 이용하였습니다.
-6. 태그가 보여지는 공간과 새로운 태그를 입력할 수 있는 공간을 포함하는 `div` 태그를 만들어 css 처리를 해주어 마치 `input` 태그 안에 태그들이 있게끔 보여지게 합니다.
+6. 태그가 보여지는 공간과 새로운 태그를 입력할 수 있는 공간을 포함하는 `div` 태그를 만들어 css 처리를 해주어 마치 `input` 태그 안에 태그들이 있어보이게끔 합니다.
    <br />
 
 #### 어려웠던 점과 해결 방법 ❓
@@ -71,12 +70,11 @@
 
 #### 구현한 방법과 이유 🚀
 
-1. `input` 태그에 들어가 있는 `value` 를 바탕으로 autocomplete 기능을 활성화 하므로 먼저 `inputValue`라는 state를 주었고 이를 관리하기 위해 `useState` 훅을 사용하였습니다.
-2. autocomplete의 핵심은 `inputValue`에 속한 값을 '포함' 하고 있는 `options` 들을 드랍다운으로 보여주는 것이므로 `string.includes()` 함수를 이용합니다.
-3. 예시에 있는 드랍다운 값들(ex. "antique" "vintage" "rustic" etc) 을 포함하는 `possibleOptions` 배열을 만든 후 `options state`에 대입해줍니다.
-4. 드랍다운은 `inputValue` 가 변할때 마다 활성화 되어야 하므로 `useEffect` 훅을 사용하고 `dependency`를 `inputValue`로 설정합니다.
-5. 드랍다운에 나오는 단어들의 배열은 `inputValue`의 대소문자 구별없이 나타나므로 `inputValue.toLowerCase()`를 포함하고 있는 `option.toLowerCase()` 들을 찾습니다. 이를 `Array filter`를 이용하여 나타냅니다.
-
+1. `input` 태그에 들어가 있는 `value` 를 바탕으로 autocomplete 기능을 활성화 하므로 먼저 `inputValue`라는 state를 활용하였고 이를 관리하기 위해 `useState` 훅을 사용하였습니다.
+2. autocomplete의 핵심은 `inputValue`의 값을 '포함' 하고 있는 `options` 들을 드랍다운으로 보여주는 것이므로 `string.includes()` 함수를 이용했습니다.
+3. 예시에 있는 드랍다운 값들(ex. "antique" "vintage" "rustic" etc) 을 가진 `possibleOptions` 배열을 만든 후 `options state`에 대입해줍니다.
+4. 드랍다운은 `inputValue` 가 변할 때 마다 활성화 되어야 하므로 `useEffect` 훅을 사용하고 `dependency`를 `inputValue`로 설정합니다.
+5. 드랍다운에 나오는 단어들의 배열은 `inputValue`의 대소문자 구별없이 나타나야 하므로 `inputValue.toLowerCase()`를 포함하고 있는 `option.toLowerCase()` 들을 찾습니다. 이를 `Array filter`를 이용하여 나타냈습니다.
 6. 4,5번을 코드로 묶어 나타내면 아래 코드와 같습니다.
 
 ```js
@@ -91,22 +89,22 @@ useEffect(() => {
 }, [inputValue]);
 ```
 
-7. 드랍다운에서 `click` 이 발생하면, 해당 `option`으로 `inputValue`를 설정해줍니다.
+7. 드랍다운에서 `click` 이 발생하면, 해당 `option`으로 `inputValue`를 설정하여 `input` 창에 보여줍니다..
    <br />
 
 #### 어려웠던 점과 해결 방법 ❓
 
 - `string`의 `includes`함수가 떠오르지 않아 연관된(단어가 포함된) `options` 배열을 어떻게 보여줘야 하나 당황했습니다. 검색 후에 `includes` 함수가 있는 것을 발견하여 `filter` 함수를 통해 `includes` 된 단어를 보여주었습니다.
 - `input` 태그에 `border-radius`를 주니 `input` 태그가 화면에 깨져서 나타나는 버그가 발생했습니다. `input` 태그에 `background-color: transparent;`를 주어 해결하였습니다.
-- `input` 창에 `space`만 입력하니, `input` 창의 `border-bottom`모습이 처음의 `input`창의 모습과 달라지는 문제가 발생했습니다. `css class`명으로 스페이스만 입력되었을 때 `unProperInput`를 추가하여 원래의 `input` 창이 되도록 설정하여 해결하였습니다.
+- `input` 창에 `space`만 입력하니, 유효한 `inputValue`라고 판단되어 `input` 창의 `border-bottom`모습이 처음의 `input`창의 모습과 달라지는 문제가 발생했습니다. `css class`명으로 스페이스만 입력되었을 때 `unProperInput`를 추가하여 원래의 `input` 창이 되도록 설정하여 해결하였습니다.
   <br /><br /><br />
 
 ## 6️⃣ ClickToEdit
 
 #### 구현한 방법과 이유 🚀
 
-1. 이름과 나이를 변경할 수 있어야 하므로 `name, age` state를 선언하고, 각각을 컨트롤 하기 위해 `useState`훅을 사용합니다.
-2. 이름과 나이를 클릭하면 변경 가능한 mode가 되어야 하므로, `isNameEditable, isAgeEditable` state를 선언하고 각각을 컨트롤 하기 위해 `useState`훅을 사용한다.
+1. 이름과 나이를 변경할 수 있어야 하므로 `name, age` state를 활용하였고, 각각을 컨트롤 하기 위해 `useState`훅을 사용했습니다.
+2. 이름과 나이를 클릭하면 변경 가능한 mode가 되어야 하므로, `isNameEditable, isAgeEditable` state를 활용하고 각각을 컨트롤 하기 위해 `useState`훅을 사용하였습니다.
 3. 삼항연산자를 사용하여, 이름과 나이가 변경 가능한 mode가 되면, `input` 태그를 보여주고, 변경 불가능한 mode가 되면 `span` 태그로 이름과 나이를 보여줍니다.
    <br />
 
