@@ -8,6 +8,7 @@
 
 👇시현 영상👇
 <br />
+<br />
 <img src="https://user-images.githubusercontent.com/56289900/152107545-315e1e66-8c93-4235-a316-ee3be882cdec.gif" />
 <br />
 
@@ -27,6 +28,7 @@
 
 👇시현 영상👇
 <br />
+<br />
 <img src="https://user-images.githubusercontent.com/56289900/152107618-c57062ca-69a7-4752-8723-9f0d4c375c14.gif" />
 <br />
 
@@ -45,6 +47,7 @@
 ## 3️⃣ Tab
 
 👇시현 영상👇
+<br />
 <br />
 <img src="https://user-images.githubusercontent.com/56289900/152107708-45b6d110-c1f1-4cd8-aada-702419644741.gif" />
 <br />
@@ -66,6 +69,7 @@
 ## 4️⃣ Tag
 
 👇시현 영상👇
+<br />
 <br />
 <img src="https://user-images.githubusercontent.com/56289900/152107757-cd14d35b-7c63-4244-9095-ca21babb49fc.gif" />
 <br />
@@ -89,6 +93,7 @@
 ## 5️⃣ AutoComplete
 
 👇시현 영상👇
+<br />
 <br />
 <img src="https://user-images.githubusercontent.com/56289900/152107803-5f008fae-26a5-466d-ac49-8e32625fbea0.gif" />
 <br />
@@ -127,6 +132,7 @@ useEffect(() => {
 ## 6️⃣ ClickToEdit
 
 👇시현 영상👇
+<br />
 <br />
 <img src="https://user-images.githubusercontent.com/56289900/152107850-870ced9c-9388-4323-9b74-773355991d2c.gif" />
 <br />
