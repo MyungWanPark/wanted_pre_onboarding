@@ -4,7 +4,8 @@
 ✅ 구현 기능: Toggle, Modal, Tab, Tag, AutoComplete, ClickToEdit
 <br /><br /><br />
 
-🎉wanted_pre_onboarding 프로젝트 실행방법🎉
+#### 🎉 wanted_pre_onboarding 프로젝트 실행방법🎉
+
 <br />
 
 1. 프로젝트 다운로드
