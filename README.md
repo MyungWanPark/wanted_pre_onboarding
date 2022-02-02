@@ -7,7 +7,7 @@
 ## 1️⃣ Toggle
 
 <br />
-![toggle_gif](https://user-images.githubusercontent.com/56289900/152105470-e343e100-1aba-4a18-af17-83b96a073f09.gif)
+<img src="https://user-images.githubusercontent.com/56289900/152105470-e343e100-1aba-4a18-af17-83b96a073f09.gif" />
 <br />
 
 #### 구현한 방법과 이유 🚀
