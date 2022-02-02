@@ -5,10 +5,32 @@
 <br /><br />
 
 🎉wanted_pre_onboarding 프로젝트 실행방법
-`git clone https://github.com/MyungWanPark/wanted_pre_onboarding.git`
-`cd wanted_pre_onboarding/custom-component`
-`npm install`
-`npm start`
+<br />
+
+1. 프로젝트 다운로드
+
+```git
+git clone https://github.com/MyungWanPark/wanted_pre_onboarding.git
+```
+
+2. custom-component 폴더로 이동
+
+```git
+cd wanted_pre_onboarding/custom-component
+```
+
+3. 필요한 package 설치
+
+```git
+npm install
+```
+
+4. 프로젝트 실행
+
+```git
+npm start
+```
+
 <br /><br />
 
 ## 1️⃣ Toggle
