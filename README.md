@@ -1,4 +1,4 @@
-# wanted_pre_onboarding
+# 원티드 프리온보딩 코스
 
 <br />
 ✅ 구현 기능: Toggle, Modal, Tab, Tag, AutoComplete, ClickToEdit
