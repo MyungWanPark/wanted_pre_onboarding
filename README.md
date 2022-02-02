@@ -1,9 +1,10 @@
 # wanted_pre_onboarding
 
+<br />
 ✅ 구현 기능: Toggle, Modal, Tab, Tag, AutoComplete, ClickToEdit
 <br />
-
-## 1. Toggle
+<br />
+## 1️⃣ Toggle
 
 #### 구현한 방법과 이유 🚀
 
@@ -15,10 +16,9 @@
 #### 어려웠던 점과 해결 방법 ❓
 
 - on 조건에 따라 부여된 클래스 이름인 `color-on, btn-on`을 활용하는데 있어 보라색 색상이 오른쪽으로 차오르는 과정에서 문제가 발생합니다. 원래는 `div` 박스를 `width:0%` 으로 시작해서 `width: 60px; transform: translateX(30px); `을 활용한 애니메이션으로 색이 차는 것을 표현하려고 했습니다. 하지만 `border-radius`로 인하여 그 과정이 부자연스러지는 문제가 발생했습니다. 여러 시도 후, `background` 가 먼저 색이 덮혀있었으면 좋겠다는 생각이 들어, `background: linear-gradient(to right, RGB(76, 17, 209) 50%, #c5c5c5 50%)`(색상은 원본 파일의 색을 color picker로 추출해왔습니다. )를 이용하였습니다. 미리 배경을 두 가지 색상으로 반반 덮은 후 `background-size: 200%;`로 설정하여 회색 색상만 보이게 확대하고, on 상태가 되면 천천히 보라색으로 시점이 넘어가는 방법으로 문제를 해결했습니다.
-  <br />
-  <br /><br /><br /><br />
+  <br /><br /><br />
 
-## 2. Modal
+## 2️⃣ Modal
 
 #### 구현한 방법과 이유 🚀
 
@@ -31,9 +31,9 @@
 #### 어려웠던 점과 해결 방법 ❓
 
 - 메세지 창의 여백을 클릭하거나 &times; 를 클릭하면 모달이 닫히는 것을 위해 각각의 `div` 태그에 `onClick={handleIsAppeared}` 을 설정하니, 이벤트 버블링에 의해서 메세지 창을 클릭해도 모달창이 닫히는 문제가 발생합니다. 따라서 `event.stoppropagation()`를 메세지 창에 사용하려고 했습니다. 하지만 해당 메소드는 협업할 때 다른 누군가의 이벤트 사용을 저지하는 좋지 않은 메소드라고 배웠습니다. 따라서 대체할 수 있는 방법을 고민하다가, `if (event.target === event.currentTarget)` 을 이용해서 이벤트의 실제 발생지역에서만 모달창이 사라지게 하게끔 해서 문제를 해결하였습니다.
-  <br />
+  <br /><br /><br />
 
-## 3. Tab
+## 3️⃣ Tab
 
 #### 구현한 방법과 이유 🚀
 
@@ -47,9 +47,9 @@
 #### 어려웠던 점과 해결 방법 ❓
 
 - 처음 아이디어를 구상할 때, 탭들을 구분짓지만, 공통된 속성을 갖게 나타내는 방법에 대한 고민을 했습니다. `const tabSequence = {"First", "Second", "Third"}` 도 고려했지만, 각각의 탭들을 번호로 맵핑하여 구분하는것이 더 간단해 보였으므로, 번호를 붙여 구분하였습니다.
-  <br />
+  <br /><br /><br />
 
-## 4. Tag
+## 4️⃣ Tag
 
 #### 구현한 방법과 이유 🚀
 
@@ -65,9 +65,9 @@
 
 - 처음 아이디어를 구상하는게 어려웠습니다. 태그가 `input` 태그 안에서 만들어지는 것 처럼 생겨서 `input` 의 결과로 생긴 `ul li`태그를 `input` 태그 안으로 넣는 방법을 고민하고 구글링 하며 찾아보았습니다. 하지만 그 방법을 찾지 못했습니다. 대신 태그가 보여지는 공간과 새로운 태그를 입력하는 공간을 분리하는 방식으로 마치 `input` 태그 안에서 생긴 것으로 '보여지게끔' 하는 방식으로 해결하였습니다.
 - 처음에 `tagsArr` 를 `value` 만 가지는 `array` 로 설정하였고, 이를 활용한 `array`의 `map` 함수에서 `li key`를 unique 한 값으로 `Date.now()` 를 주었습니다. 하지만 unique한 키를 주었음에도 불구하고 같은 값을 입력해보니 'li에는 unique 한 key를 주어야 한다' 는 에러메세지가 발생했습니다. 이를 해결하기 위해 `tagsArr` 를 `{id:id, value:value}`를 갖는 배열로 재설정 하였고 `li key={tag.id}` 로 설정하여 같은 값을 넣을때 발생하는 문제를 해결 하였습니다.
-  <br />
+  <br /><br /><br />
 
-## 5. AutoComplete
+## 5️⃣ AutoComplete
 
 #### 구현한 방법과 이유 🚀
 
@@ -99,9 +99,9 @@ useEffect(() => {
 - `string`의 `includes`함수가 떠오르지 않아 연관된(단어가 포함된) `options` 배열을 어떻게 보여줘야 하나 당황했습니다. 검색 후에 `includes` 함수가 있는 것을 발견하여 `filter` 함수를 통해 `includes` 된 단어를 보여주었습니다.
 - `input` 태그에 `border-radius`를 주니 `input` 태그가 화면에 깨져서 나타나는 버그가 발생했습니다. `input` 태그에 `background-color: transparent;`를 주어 해결하였습니다.
 - `input` 창에 `space`만 입력하니, `input` 창의 `border-bottom`모습이 처음의 `input`창의 모습과 달라지는 문제가 발생했습니다. `css class`명으로 스페이스만 입력되었을 때 `unProperInput`를 추가하여 원래의 `input` 창이 되도록 설정하여 해결하였습니다.
-  <br />
+  <br /><br /><br />
 
-## 6. ClickToEdit
+## 6️⃣ ClickToEdit
 
 #### 구현한 방법과 이유 🚀
 
@@ -114,4 +114,4 @@ useEffect(() => {
 
 - 처음에 이름과 나이를 변경하면 밑의 결과창에 이름과 나이가 바로 변경되는 방식으로 구현했습니다. 하지만 예시를 보니 `input` 창에서 변경을 해도 바깥을 클릭하지 않는 이상 이름, 나이가 변경되지 않는 점을 발견했습니다. 그래서 고민 후 생각해낸 방법이 임시 state `(tempName, tempAge)`를 두어 `input` 창에서 변경하는대로 임시 state가 변경이 되고, 바깥이 클릭이 되면, 임시state의 값으로 `age, name` 의 값을 변경하는 방식으로 문제를 해결하였습니다.
 - 이름과 나이의 `span`이 클릭되면, `span`태그를 `input` 태그로 변경시켜서 바로 수정이 가능할 줄 알았는데, 한번 더 클릭해야 수정이 가능해지는 문제가 발생했습니다. 이 문제는 `useRef` 훅을 이용하여 `isNameEditable = true` 가 되면 `nameInputRef.current.focus();` 을 활용하여 해결했습니다.
-  <br />
+  <br /><br /><br />
