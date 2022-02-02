@@ -4,6 +4,13 @@
 ✅ 구현 기능: Toggle, Modal, Tab, Tag, AutoComplete, ClickToEdit
 <br /><br />
 
+🎉wanted_pre_onboarding 프로젝트 실행방법
+`git clone https://github.com/MyungWanPark/wanted_pre_onboarding.git`
+`cd wanted_pre_onboarding/custom-component`
+`npm install`
+`npm start`
+<br /><br />
+
 ## 1️⃣ Toggle
 
 👇시현 영상👇
