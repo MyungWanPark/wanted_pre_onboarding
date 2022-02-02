@@ -68,7 +68,7 @@ const InputTag = styled.input`
 `;
 
 const Tag = () => {
-  const [hashTagArr, setHashTagArr] = useState([
+  const [tagsArr, setTagsArr] = useState([
     { id: 1, value: "CodeStates" },
     { id: 2, value: "JJang" },
   ]);
@@ -80,32 +80,32 @@ const Tag = () => {
     event.preventDefault();
     const inputValue = inputRef.current.value;
 
-    for (let i = 0; i < hashTagArr.length; i++) {
-      if (hashTagArr[i].value === inputValue) {
+    for (let i = 0; i < tagsArr.length; i++) {
+      if (tagsArr[i].value === inputValue) {
         formRef.current.reset();
         return;
       }
     }
 
     if (inputValue) {
-      const newArr = [...hashTagArr, { id: Date.now(), value: inputValue }];
-      setHashTagArr(newArr);
+      const newArr = [...tagsArr, { id: Date.now(), value: inputValue }];
+      setTagsArr(newArr);
       formRef.current.reset();
     }
   };
 
   const removeTags = (index) => {
-    const afterRemovedTag = hashTagArr.filter((tag) => {
+    const afterRemovedTag = tagsArr.filter((tag) => {
       return tag.id !== index;
     });
-    setHashTagArr(afterRemovedTag);
+    setTagsArr(afterRemovedTag);
   };
 
   return (
     <Container>
       <TagBox>
         <ul className="ulTag">
-          {hashTagArr.map((tag) => (
+          {tagsArr.map((tag) => (
             <li key={tag.id} className="tagList">
               <span className="tagContent">{tag.value}</span>
               <span className="tagClose" onClick={() => removeTags(tag.id)}>
